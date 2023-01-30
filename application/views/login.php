@@ -1,3 +1,13 @@
+<link href="<?= base_url() ?>assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url() ?>assets/css/animate.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url() ?>assets/css/blueimp-gallery.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url() ?>assets/css/bootstrap-default.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url() ?>assets/css/bootstrap-theme-herbie.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url() ?>assets/css/custom-style.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url() ?>assets/css/flatpickr.min.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url() ?>assets/css/bootstrap-editable.css" rel="stylesheet" type="text/css" />
+<link href="<?= base_url() ?>assets/css/dropzone.min.css" rel="stylesheet" type="text/css" />
+<script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"> </script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-4">
@@ -15,46 +25,32 @@
 
                         <div class="input-group form-group">
 
-                            <input placeholder="Password" required="required" v-model="user.password" name="password" class="form-control " type="password" />
+                            <input placeholder="Password" required="required" name="password" class="form-control " type="password" />
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="form-control-feedback fa fa-key"></i></span>
                             </div>
                         </div>
-                        <div class="row clearfix mt-3 mb-3">
-
-                            <div class="col-6">
-                                <label class="">
-                                    <input value="true" type="checkbox" name="rememberme" />
-                                    Remember Me
-                                </label>
-                            </div>
-
-                            <div class="col-6">
-                                <a href="#" class="text-danger"> Reset Password?</a>
-                            </div>
-
-                        </div>
-
                         <div class="form-group text-center">
-                            <button class="btn btn-primary btn-block btn-md" type="submit">
+                            <button class="btn btn-primary btn-block btn-md" type="submit" id="btn-login">
                                 <i class="load-indicator">
                                     <clip-loader :loading="loading" color="#fff" size="20px"></clip-loader>
                                 </i>
                                 Login <i class="fa fa-key"></i>
                             </button>
+                            <a href="<?= base_url('Dashboard') ?>">Masok</a>
                         </div>
-                        <hr />
-
-                        <div class="text-center">
-                            Don't Have an Account? <a href="#" class="btn btn-success">Register
-                                <i class="fa fa-user"></i></a>
-                        </div>
-
                     </form>
                 </div>
-
-
             </div>
         </div>
     </div>
 </div>
+<script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"> </script>
+<script src="<?= base_url() ?>assets/js/popper.js"> </script>
+<script src="<?= base_url() ?>assets/js/bootstrap-4.3.1.min.js"> </script>
+<script src="<?= base_url() ?>assets/js/dropzone.min.js"> </script>
+<script src="<?= base_url() ?>assets/js/plugins.js"> </script>
+<script src="<?= base_url() ?>assets/js/plugins-init.js"> </script>
+<script src="<?= base_url() ?>assets/js/page-scripts.js"> </script>
+<script src="<?= base_url() ?>assets/js/flatpickr.min.js"> </script>
+<?php include APPPATH . 'views/template/script/script-lg.php' ?>

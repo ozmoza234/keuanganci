@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Methods: GET, OPTIONS");
 
 class Welcome extends CI_Controller
 {
@@ -19,6 +21,7 @@ class Welcome extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
+
 	public function index()
 	{
 		$this->load->view('login');
