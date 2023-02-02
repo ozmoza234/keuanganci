@@ -16,8 +16,7 @@
                 </div>
                 <div class="row ">
                     <div class="col-md-3 col-sm-4 comp-grid">
-
-                        <a class="animated shake record-count alert alert-success" href="#">
+                        <a class="animated shake record-count alert alert-success" href="<?= base_url('Nasabah') ?>">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fa fa-user "></i>
@@ -28,13 +27,13 @@
                                         <small class=""></small>
                                     </div>
                                 </div>
-                                <h4 class="value">10<strong></strong></h4>
+                                <h4 class="value"><?= $tot_nsb[0]->tot ?><strong></strong></h4>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-3 col-sm-4 comp-grid">
 
-                        <a class="animated shake record-count alert alert-success" href="#">
+                        <a class="animated shake record-count alert alert-success" href="<?= base_url('Pinjaman') ?>">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fa fa-money "></i>
@@ -45,13 +44,13 @@
                                         <small class=""></small>
                                     </div>
                                 </div>
-                                <h4 class="value"><strong>14</strong></h4>
+                                <h4 class="value"><strong><?= $tot_pinj[0]->tot ?></strong></h4>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-3 col-sm-4 comp-grid">
 
-                        <a class="animated shake record-count alert alert-success" href="#">
+                        <a class="animated shake record-count alert alert-success" href="<?= base_url('Tabungan') ?>">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fa fa-book "></i>
@@ -62,13 +61,13 @@
                                         <small class=""></small>
                                     </div>
                                 </div>
-                                <h4 class="value"><strong>5</strong></h4>
+                                <h4 class="value"><strong><?= $tot_tab[0]->tot ?></strong></h4>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-3 col-sm-4 comp-grid">
 
-                        <a class="animated shake record-count alert alert-success" href="#">
+                        <a class="animated shake record-count alert alert-success" href="<?= base_url('Pelunasan') ?>">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fa fa-money "></i>
@@ -79,12 +78,12 @@
                                         <small class=""></small>
                                     </div>
                                 </div>
-                                <h4 class="value"><strong>6</strong></h4>
+                                <h4 class="value"><strong><?= $tot_lns[0]->tot ?></strong></h4>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-3 col-sm-4 comp-grid">
-                        <a class="animated shake record-count alert alert-success" href="#">
+                        <a class="animated shake record-count alert alert-success" href="<?= base_url('Pengguna') ?>">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fa fa-users "></i>
@@ -95,7 +94,7 @@
                                         <small class=""></small>
                                     </div>
                                 </div>
-                                <h4 class="value"><strong>7</strong></h4>
+                                <h4 class="value"><strong><?= $tot_usr[0]->tot ?></strong></h4>
                             </div>
                         </a>
                     </div>
@@ -103,5 +102,4 @@
             </div>
         </div>
     </div>
-
 </div>

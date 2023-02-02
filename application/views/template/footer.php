@@ -22,13 +22,7 @@
 <!-- Page Footer Ends -->
 </div>
 </div>
-<script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"> </script>
-<script src="<?= base_url() ?>assets/js/popper.js"> </script>
-<script src="<?= base_url() ?>assets/js/bootstrap-4.3.1.min.js"> </script>
-<script src="<?= base_url() ?>assets/js/dropzone.min.js"> </script>
-<script src="<?= base_url() ?>assets/js/plugins.js"> </script>
-<script src="<?= base_url() ?>assets/js/plugins-init.js"> </script>
-<script src="<?= base_url() ?>assets/js/page-scripts.js"> </script>
+<!-- <script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"> </script> -->
 
 </body>
 
