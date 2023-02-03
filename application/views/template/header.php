@@ -27,6 +27,8 @@
     <script src="<?= base_url() ?>assets/js/plugins-init.js"> </script>
     <script src="<?= base_url() ?>assets/js/page-scripts.js"> </script>
 
+    <script src="<?= base_url() ?>assets/js/sweetalert2.all.min.js"></script>
+
 </head>
 
 <body>
