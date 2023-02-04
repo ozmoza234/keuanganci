@@ -30,7 +30,8 @@ class Pelunasan extends CI_Controller
         $tanggalCicilan = $this->input->post('tanggalCicilan');
 
         $data = array(
-            'id_pinjaman' => $id_pinjaman,            'nama_nasabah' => $nama_nasabah,
+            'nama_nasabah' => $nama_nasabah,
+            'id_pinjaman' => $id_pinjaman,
             'jumlah_pinjaman' => $jumlah_pinjaman,
             'cicilan' => $nominalCicilan,
             'tanggal_pelunasan' => $tanggalCicilan,
@@ -45,5 +46,18 @@ class Pelunasan extends CI_Controller
         $id_pinjaman = $this->input->get('id_pinjaman');
         $result['data'] = $this->App_m->load_pln($id_pinjaman);
         echo json_encode($result);
+    }
+
+    public function load_total_cicilan()
+    {
+        $id_pinjaman = $this->input->get('id_pinjaman');
+        $result['data'] = $this->App_m->load_total_c($id_pinjaman);
+        echo json_encode($result);
+    }
+
+    public function delete_cicilan()
+    {
+        $id_pelunasan = $this->input->post('id_pelunasan');
+        $this->App_m->hapus_data_cicilan($id_pelunasan);
     }
 }

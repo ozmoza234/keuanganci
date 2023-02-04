@@ -4,7 +4,10 @@
         //tampilin data
         let list;
         list = $('#list').DataTable({
+            paging: false,
             autoWidth: false,
+            searching: false,
+            info: false,
             ajax: {
                 url: '<?= base_url('Pinjaman/show') ?>',
                 dataType: 'json'
@@ -52,11 +55,22 @@
             $('#jumlah_pinjaman').val(jumlah);
 
             //tampil daftar cicilan terupdate
-            load_cicilan = $('#load_details').DataTable({
+            load_details = $('#load_details').DataTable({
                 paging: false,
                 autoWidth: false,
                 searching: false,
                 info: false,
+                dom: 'Bfrtip',
+                buttons: [{
+                    className: 'btn btn-success',
+                    extend: 'excelHtml5',
+                    text: '<span class="fa fa-file-excel-o"></span>',
+                    filename: 'Cicilan_' + nama + '_Pinjaman_' + tanggal,
+                    customize: function(xlsx) {
+                        var sheet = xlsx.xl.worksheets['sheet1.xml'];
+                        $('c[r=A1] t', sheet).text('Daftar Cicilan');
+                    },
+                }],
                 ajax: {
                     url: '<?= base_url('Pelunasan/load_cicilan') ?>',
                     data: {
@@ -88,11 +102,57 @@
                         data: null,
                         className: 'text-center',
                         render: function(data, type, row) {
-                            return `<a class="btn btn-sm btn-info" id="btn_edit" href='#'><i class="fa fa-edit"></i> Edit</a><a class="btn btn-sm btn-danger has-tooltip" title="" href='#' id='btn_del'"><i class="fa fa-times"></i> Delete</a>`
+                            return `<a class="btn btn-sm btn-danger has-tooltip" title="" href='#' id='btn_del'"><i class="fa fa-times"></i></a>`
                         }
                     },
                 ]
             });
+
+            //untuk delete cicilan
+            $('#load_details tbody').on('click', '#btn_del', function() {
+                let id_pelunasan = load_details.row($(this).parents('tr')).data().id_pelunasan;
+                Swal.fire({
+                        icon: 'warning',
+                        title: 'Warning!',
+                        html: '<p>' + 'Yakin hapus?' + '<br>' + "Aksi ini tidak bisa dibatalkan" + '</p>',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Ya, Hapus!',
+                        cancelButtonText: 'Tidak',
+                    })
+                    .then(function(result) {
+                        if (result.value) {
+                            $.ajax({
+                                url: '<?= base_url('Pelunasan/delete_cicilan') ?>',
+                                type: 'POST',
+                                data: {
+                                    id_pelunasan: id_pelunasan
+                                },
+                                success: function(data) {
+                                    Swal.fire('Success!', 'Data Dihapus', 'success').then(function() {
+                                        window.location.reload()
+                                    })
+                                }
+                            })
+                        }
+                    })
+            })
+
+            //tampil total cicilan
+            let ajaxTotalCicilan = $.ajax({
+                url: '<?= base_url('Pelunasan/load_total_cicilan') ?>',
+                data: {
+                    id_pinjaman: id_pinjaman
+                },
+                type: 'GET',
+                dataType: 'json'
+            });
+
+            $.when(ajaxTotalCicilan).done(function(ajaxTotalCicilanDone) {
+                let total = ajaxTotalCicilanDone.data[0].total_cicilan
+                $('#cicilan').val(total);
+            })
 
             $('#modal_edit_title').text('Cicilan Nasabah ' + nama + ' Pinjaman ' + tanggal);
             $('#modal_edit').prependTo("body").modal("show");
@@ -135,12 +195,13 @@
                             title: 'Success',
                             text: 'Data Has Been Saved!',
                             icon: 'success'
-                        });
+                        }).then(function() {
 
-                        $('#nominalCicilan').val("");
-                        $('#tanggalCicilan').val("");
+                            $('#nominalCicilan').val("");
+                            $('#tanggalCicilan').val("");
 
-                        load_cicilan.ajax.reload();
+                            window.location.reload();
+                        })
                     }
                 });
             }
@@ -154,5 +215,11 @@
             searching: false,
             info: false
         });
+
+        //jika button close di klik value dari total cicilan reset ke 0
+        $('#close_modal').on('click', function() {
+            $('#cicilan').val(0);
+        });
+
     })
 </script>

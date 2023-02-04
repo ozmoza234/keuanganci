@@ -50,7 +50,7 @@
                         <input class="form-control" type="text" name="jumlah" id="jumlah" readonly>
                     </div>
                     <div class="col-lg-3"><label for="cicilan">Total Cicilan: </label>
-                        <input class="form-control" type="text" name="cicilan" id="cicilan" value="Durung dadi" readonly>
+                        <input class="form-control" type="text" name="cicilan" id="cicilan" readonly>
                     </div>
                     <input type="hidden" id="id_pinjaman">
                     <input type="hidden" id="nama_nasabah">
@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="close_modal" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
