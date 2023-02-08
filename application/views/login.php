@@ -1,3 +1,5 @@
+<title>CV. Cipta Usaha Mandiri</title>
+<link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/img/logo/vav-removebg-preview.png">
 <link href="<?= base_url() ?>assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="<?= base_url() ?>assets/css/animate.css" rel="stylesheet" type="text/css" />
 <link href="<?= base_url() ?>assets/css/blueimp-gallery.css" rel="stylesheet" type="text/css" />
@@ -31,13 +33,14 @@
                             </div>
                         </div>
                         <div class="form-group text-center">
-                            <button class="btn btn-primary btn-block btn-md" type="submit" id="btn-login">
-                                <i class="load-indicator">
-                                    <clip-loader :loading="loading" color="#fff" size="20px"></clip-loader>
-                                </i>
-                                Login <i class="fa fa-key"></i>
-                            </button>
-                            <a href="<?= base_url('Dashboard') ?>">Masok</a>
+                            <a href="<?= base_url('Dashboard') ?>">
+                                <button class="btn btn-primary btn-block btn-md" type="button" id="btn-login">
+                                    <i class="load-indicator">
+                                        <clip-loader :loading="loading" color="#fff" size="20px"></clip-loader>
+                                    </i>
+                                    Login <i class="fa fa-key"></i>
+                                </button>
+                            </a>
                         </div>
                     </form>
                 </div>

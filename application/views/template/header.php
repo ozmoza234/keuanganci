@@ -2,7 +2,9 @@
 <html>
 
 <head>
-    <title></title>
+    <title>CV. Cipta Usaha Mandiri</title>
+    <link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/img/logo/vav-removebg-preview.png">
+    <link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/img/logo/logo_saja_GI.png">
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="shortcut icon" href="#" />
@@ -60,7 +62,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="#"><i class="fa fa-user"></i> My Account</a>
-                                <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                                <a class="dropdown-item" href="<?= base_url() ?>"><i class="fa fa-sign-out"></i> Logout</a>
                             </ul>
                         </li>
                     </ul>
